@@ -1,11 +1,11 @@
-# node-jest-using-ts-jest-template
+# node-ts-jest-using-ts-jest template
 
 ## About
 
 A template for **Node environment** having following features
 
 1. **ES Modules:** To interpret Javascript Files having `.js` extension as ES Modules
-2. **Typescript:** To adds Typescript support for both source and unit test code
+2. **Typescript:** To add Typescript support for both source and unit test code
 3. **Jest**: To add Jest framework for unit testing
 
 ### 1. ES Modules
@@ -51,7 +51,7 @@ Typescript support in Jest comes in 2 flavors:
 - Using [babel-jest](https://www.npmjs.com/package/babel-jest)
 - Using [ts-jest](https://github.com/kulshekhar/ts-jest)
 
-This template uses ts-jest flavor for the typescript.
+This template uses **ts-jest** flavor for the typescript.
 
 ##### How to decide between babel-jest and ts-jest?
 
