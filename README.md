@@ -2,11 +2,11 @@
 
 ## About
 
-A template for **Node environment** having following features
+A template for **Node environment** adding **ES Modules + Typescript** support to both **source and test code**.
 
-1. **ES Modules:** To interpret Javascript Files having `.js` extension as ES Modules
-2. **Typescript:** To add Typescript support for both source and unit test code
-3. **Jest**: To add Jest framework for unit testing
+**Jest** framework has been used to unit test the source code.
+
+## Source Code
 
 ### 1. ES Modules
 
@@ -30,9 +30,9 @@ This template
     "exclude": ["**/*.test.*", "**/*.spec.*"]
   ```
 
-### 3. Jest
+## Test Code
 
-#### 3.1. Add ES Modules Support
+### 1. ES Modules
 
 Jest doesn't support ES Modules out of the box but [it supports as per the steps mentioned in ECMAScript Modules article](https://jestjs.io/docs/ecmascript-modules).
 
@@ -44,7 +44,25 @@ node --experimental-vm-modules node_modules/jest/bin/jest.js
 
 **Note:** AFAIK, for Typescript support, this is required only when running jest with **babel-jest** and NOT when running with **ts-jest**.
 
-#### 3.2. Add Typescript Support
+### 2. Typescript
+
+Typescript support in Jest can be achieved by either [babel-jest](https://www.npmjs.com/package/babel-jest) or [ts-jest](https://github.com/kulshekhar/ts-jest).
+
+> You may read **Typescript support in Jest** section below to understand the difference.
+
+This template uses **ts-jest** and
+
+- Resolves to the same Typescript and its compiler added in **package.json**.
+- Which further tells you to rename `.js` to `.ts` files if you add types into the JS files
+- Adds a **tsconfig.test.json** to include typescript only for the test files in the **src** directory as per the below configuration
+
+  ```
+  "include": ["src/**/*.test.*", "src/**/*.spec.*"],
+  ```
+
+  > Please note that Typescript support to the test files uses a different tsconfig file i.e. **tsconfig.test.json**.
+
+## Typescript support in Jest
 
 Typescript support in Jest comes in 2 flavors:
 
@@ -53,15 +71,15 @@ Typescript support in Jest comes in 2 flavors:
 
 This template uses **ts-jest** flavor for the typescript.
 
-##### How to decide between babel-jest and ts-jest?
+### 1. babel-jest
 
 Please note that **babel-jest** gets installed along with **jest** and it will transform the files if babel configuration file e.g. **babel.config.js** is present.
 
 When you use **ts-jest** (as in this template), babel configuration is not required and in turn **babel-jest** would not transform the files even though it is installed.
 
-Typescript support with Babel (**babel-jest**) is purely transpilation i.e. it strips types and transpiles and will not type-check your test files.
+Typescript support with Babel (**babel-jest**) is purely transpilation and does not type-check the test files.
 
-##### Do you need Transpilation Only or Both Transpilation and Type-Checking?
+#### ts-jest vs babel-jest
 
 Before providing the files to the Jest to run them:
 
@@ -71,18 +89,26 @@ Before providing the files to the Jest to run them:
 2. transpile, and
 3. type-check the test files
 
-whereas
-
-**babel-jest** will
+whereas **babel-jest** will
 
 1. strip types, and
 2. transpile only
 
+You may choose based on this difference.
+
 ## Scripts
 
+### 1. Source Code
+
 1. Execute
-   `npm run build` to compile the typescript files into the **dist** directory.
-2. Execute `npm run test` to run test cases using Jest
+   `npm run dev` to compile the typescript files into the **dist** directory in watch mode. It starts a process which detects changes in files and keeps compiling to the **dist** directory upon file changes.
+1. Execute
+   `npm run build` to compile the typescript files into the **dist** directory
+
+### 2. Test Code
+
+1. Execute `npm run test` to run test cases using Jest
+1. Execute `npm run test-tc` to type check the test files
 
 ---
 
