@@ -1,53 +1,53 @@
 export default class Calculator {
-  private value: number;
+  private value: number
 
   constructor(initialValue: number = 0) {
-    this.value = initialValue;
+    this.value = initialValue
   }
 
   add(...numbers: number[]) {
     for (const number of numbers) {
-      this.value += number;
+      this.value += number
     }
 
-    return this;
+    return this
   }
 
   subtract(...numbers: number[]) {
     for (const number of numbers) {
-      this.value -= number;
+      this.value -= number
     }
 
-    return this;
+    return this
   }
 
   multiply(...numbers: number[]) {
     for (const number of numbers) {
-      this.value *= number;
+      this.value *= number
     }
 
-    return this;
+    return this
   }
 
   divide(...numbers: number[]) {
     for (const number of numbers) {
       if (number === 0) {
-        throw new Error('Cannot divide by zero');
+        throw new Error('Cannot divide by zero')
       }
 
-      this.value /= number;
+      this.value /= number
     }
 
-    return this;
+    return this
   }
 
   reset(): this {
-    this.value = 0;
+    this.value = 0
 
-    return this;
+    return this
   }
 
   result(): number {
-    return this.value;
+    return this.value
   }
 }
