@@ -104,6 +104,12 @@ You may choose based on this difference.
    `npm run dev` to compile the typescript files into the **dist** directory in watch mode. It starts a process which detects changes in files and keeps compiling to the **dist** directory upon file changes.
 1. Execute
    `npm run build` to compile the typescript files into the **dist** directory
+1. Execute
+   `npm run format` to fix formatting issues using prettier
+1. Execute
+   `npm run lint` to report eslint issues
+1. Execute
+   `npm run lint:fix` to report eslint issues and fix auto-fixable issues
 
 ### 2. Test Code
 
