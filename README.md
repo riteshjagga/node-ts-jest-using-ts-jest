@@ -1,5 +1,7 @@
 # node-ts-jest-using-ts-jest template
 
+ॐ श्री राम जय राम जय जय राम
+
 ## About
 
 A template for **Node environment** adding **ES Modules + Typescript** support to both **source and test code**.
