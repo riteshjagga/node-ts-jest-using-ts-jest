@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:20'      // official Node.js image from Docker Hub
-        }
-    }
+    agent any
 
     stages {
         stage('Install') {
