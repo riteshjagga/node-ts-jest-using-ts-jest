@@ -1,6 +1,7 @@
 # node-ts-jest-using-ts-jest template
 
 ॐ श्री राम जय राम जय जय राम
+ॐ श्री राम जय राम जय जय राम
 
 ## About
 
